@@ -34,7 +34,7 @@ def read_cookie_data(cookie_file):
     return cookie_data
 
 
-def get_most_used_cookie(filename, date_of_interest):
+def get_most_used_cookie(filename, date_of_interest) -> object:
     cookie_usage_count = {}
     file = read_cookie_data(filename)
 
@@ -47,15 +47,17 @@ def get_most_used_cookie(filename, date_of_interest):
                 cookie_usage_count[cookie_id] += 1
             else:
                 cookie_usage_count[cookie_id] = 1
+                
+    results = []
+    
+    for cookie in cookie_usage_count.keys():
+        if cookie_usage_count[cookie] == max(cookie_usage_count.values()):
+            results.append(cookie)
 
-    for count in cookie_usage_count.keys():
-        if cookie_usage_count[count] == max(cookie_usage_count.values()):
-            print(count)
-
-    return cookie_usage_count
+    return results
 
 
 if __name__ == "__main__":
     args = read_cli()
-    get_most_used_cookie(args['filename'], args['d'])
-
+    for i in get_most_used_cookie(args['filename'], args['d']):
+        print(i)
