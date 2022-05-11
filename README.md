@@ -1,7 +1,7 @@
 # Most-Active-Cookie
 
-This program  processes the log file and return the most active
-cookie for specified day (defined as teh cookie seen the most times during the day)
+This program  processes a given cookie log file and returns the most active
+cookie for specified day (defined as the cookie seen the most times during the day)
 
 This directory consists of the following files:
     
