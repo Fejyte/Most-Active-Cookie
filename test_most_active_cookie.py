@@ -1,5 +1,4 @@
 import pytest
-import os
 from most_active_cookie import get_arguments
 from most_active_cookie import date_time_converter
 from most_active_cookie import read_cookie_data
